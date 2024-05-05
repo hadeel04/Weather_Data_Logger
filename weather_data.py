@@ -27,7 +27,7 @@ class WeatherData:
         response = requests.get(url)
         data = response.json()
 
-        # Get the next 3 days' data
+        # Get the next 2 days' data
         dates = [datetime.fromtimestamp(data['list'][0]['dt']).date() + timedelta(days=d) for d in range(3)]
 
         for date in dates:
